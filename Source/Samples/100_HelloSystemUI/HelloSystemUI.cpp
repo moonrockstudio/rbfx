@@ -29,6 +29,7 @@
 #include <Urho3D/Graphics/Camera.h>
 #include <Urho3D/Graphics/Renderer.h>
 #include <Urho3D/Graphics/Model.h>
+#include <Urho3D/Graphics/StaticModel.h>
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Scene/Scene.h>
 #include <Urho3D/SystemUI/SystemUI.h>
@@ -36,7 +37,6 @@
 
 #include "HelloSystemUI.h"
 
-#include "Urho3D/Graphics/StaticModel.h"
 
 #include <Urho3D/DebugNew.h>
 
