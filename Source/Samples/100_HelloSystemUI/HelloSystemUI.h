@@ -60,6 +60,10 @@ private:
 
     /// Reference holding message box.
     SharedPtr<SystemMessageBox> messageBox_;
+    /// Box node.
+    SharedPtr<Node> boxNode_;
+    /// Box node.
+    SharedPtr<Gizmo> gizmo_;
     /// Flag controlling display of imgui demo window.
     bool metricsOpen_ = false;
 };
