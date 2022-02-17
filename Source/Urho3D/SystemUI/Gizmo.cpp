@@ -34,6 +34,11 @@ Gizmo::~Gizmo()
     UnsubscribeFromAllEvents();
 }
 
+void Gizmo::RegisterObject(Context* context)
+{
+    context->RegisterFactory<Gizmo>();
+}
+
 bool Gizmo::IsActive() const
 {
     return ImGuizmo::IsUsing();

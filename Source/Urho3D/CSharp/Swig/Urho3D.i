@@ -826,6 +826,7 @@ using ImGuiConfigFlags = unsigned;
 %include "generated/Urho3D/_pre_systemui.i"
 %include "Urho3D/SystemUI/Console.h"
 %include "Urho3D/SystemUI/DebugHud.h"
+%include "Urho3D/SystemUI/Gizmo.h"
 %include "Urho3D/SystemUI/SystemMessageBox.h"
 %include "Urho3D/SystemUI/SystemUI.h"
 #endif

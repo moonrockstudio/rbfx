@@ -22,13 +22,10 @@
 
 #pragma once
 
-#include "ToolboxAPI.h"
-#include <Urho3D/Scene/Scene.h>
-#include <Urho3D/Scene/Node.h>
-#include <Urho3D/Graphics/Camera.h>
-#include <Urho3D/IO/Log.h>
-#include <Urho3D/SystemUI/SystemUI.h>
-#include <Urho3D/SystemUI/SystemUIEvents.h>
+#include "../Scene/Scene.h"
+#include "../Scene/Node.h"
+#include "../Graphics/Camera.h"
+#include "../SystemUI/SystemUI.h"
 #include <ImGuizmo/ImGuizmo.h>
 
 namespace Urho3D
@@ -42,7 +39,7 @@ enum GizmoOperation
     GIZMOOP_MAX
 };
 
-class URHO3D_TOOLBOX_API Gizmo : public Object
+class URHO3D_API Gizmo : public Object
 {
     URHO3D_OBJECT(Gizmo, Object);
 public:
@@ -50,6 +47,8 @@ public:
     explicit Gizmo(Context* context);
     /// Destruct.
     ~Gizmo() override;
+    /// Register object factory.
+    static void RegisterObject(Context* context);
     /// Manipulate node. Should be called from within E_UPDATE event.
     /// \param camera which observes the node.
     /// \param node to be manipulated.
