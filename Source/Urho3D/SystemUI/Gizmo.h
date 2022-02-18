@@ -73,7 +73,11 @@ public:
     /// Set operation mode. Possible modes: rotation, translation and scaling.
     void SetOperation(GizmoOperation operation) { operation_ = operation; }
     /// Get current manipulation mode.
-    GizmoOperation GetOperation() const { return operation_; };
+    GizmoOperation GetOperation() const { return operation_; }
+    /// Set operation mode. Possible modes: rotation, translation and scaling.
+    void SetWindow(ImGuiWindow* window) { window_ = window; }
+    /// Get current manipulation mode.
+    ImGuiWindow* GetWindow() const { return window_; }
     /// Set transform space in which gizmo should operate. Parent transform space is not supported.
     void SetTransformSpace(TransformSpace transformSpace) { transformSpace_ = transformSpace; }
     /// Get transform space in which gizmo is operating.
@@ -113,6 +117,8 @@ protected:
     ea::unordered_map<Node*, Matrix3x4> initialTransforms_;
     ///
     ea::vector<Node*> manipulatedNodes_;
+    /// Window pointer the gizmo should be rendered at.
+    ImGuiWindow* window_{};
 };
 
 }

@@ -133,9 +133,25 @@ bool Gizmo::Manipulate(const Camera* camera, Node** begin, Node** end)
     Matrix4 tran = currentOrigin.Transpose();
     Matrix4 delta;
 
-    ImGuiWindow* window = ui::GetCurrentWindow();
-    ImGuizmo::SetDrawlist();
-    ImGuizmo::SetRect(window->Pos.x, window->Pos.y, window->Size.x, window->Size.y);
+    if (window_)
+    {
+        ImGuizmo::SetDrawlist();
+        ImGuizmo::SetRect(window_->Pos.x, window_->Pos.y, window_->Size.x, window_->Size.y);
+    }
+    else
+    {
+#ifdef IMGUI_HAS_VIEWPORT
+        ImVec2 pos = ImGui::GetMainViewport()->Pos;
+        ImVec2 size = ImGui::GetMainViewport()->Size;
+#else
+        ImGuiIO& io = ImGui::GetIO();
+        ImVec2 pos = ImVec2(0, 0);
+        ImVec2 size = io.DisplaySize;
+#endif
+
+        ImGuizmo::SetRect(pos.x, pos.y, size.x, size.y);
+        ImGuizmo::SetDrawlist(ui::GetBackgroundDrawList());
+    }
     ImGuizmo::Manipulate(&view.m00_, &proj.m00_, operation, mode, &tran.m00_, &delta.m00_, nullptr);
 
     if (IsActive())

@@ -21,8 +21,6 @@
 //
 
 #include "ToolboxAPI.h"
-#include <Urho3D/SystemUI/Gizmo.h>
-#include "SystemUI/AttributeInspector.h"
 #include "Scene/DebugCameraController.h"
 #include "Common/UndoStack.h"
 

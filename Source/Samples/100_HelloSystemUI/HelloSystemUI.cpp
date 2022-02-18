@@ -76,6 +76,8 @@ void HelloSystemUi::SubscribeToEvents()
 
 void HelloSystemUi::RenderUi(StringHash eventType, VariantMap& eventData)
 {
+    gizmo_->ManipulateNode(cameraNode_->GetComponent<Camera>(), boxNode_);
+
     ui::SetNextWindowSize(ImVec2(200, 300), ImGuiCond_FirstUseEver);
     ui::SetNextWindowPos(ImVec2(200, 300), ImGuiCond_FirstUseEver);
     if (ui::Begin("Sample SystemUI", 0, ImGuiWindowFlags_NoSavedSettings))
@@ -107,7 +109,6 @@ void HelloSystemUi::RenderUi(StringHash eventType, VariantMap& eventData)
     ui::End();
     if (metricsOpen_)
         ui::ShowMetricsWindow(&metricsOpen_);
-    gizmo_->ManipulateNode(cameraNode_->GetComponent<Camera>(), boxNode_);
 }
 
 void HelloSystemUi::HandleKeyDown(StringHash eventType, VariantMap& eventData)
