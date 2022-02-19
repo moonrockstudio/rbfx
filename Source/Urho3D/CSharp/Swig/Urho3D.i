@@ -821,6 +821,7 @@ using ImGuiConfigFlags = unsigned;
 %ignore ImGui::pdpx;
 %ignore ImGui::pdpy;
 %ignore ImGui::pdp;
+%ignore Urho3D::Gizmo::Manipulate(const Camera* camera, Node** begin, Node** end);
 %csconstvalue("7") Urho3D::GIZMOOP_TRANSLATE;
 %csconstvalue("120") Urho3D::GIZMOOP_ROTATE;
 %csconstvalue("896") Urho3D::GIZMOOP_SCALE;

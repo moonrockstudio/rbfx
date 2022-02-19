@@ -129,7 +129,7 @@ bool Gizmo::Manipulate(const Camera* camera, Node** begin, Node** end)
     // Scaling is always done in local space even for multiselections.
     if (operation_ == GIZMOOP_SCALE)
         mode = ImGuizmo::LOCAL;
-        // Any other operations on multiselections are done in world space.
+    // Any other operations on multiselections are done in world space.
     if (begin + 1 != end)   // nodes.size() > 1
         mode = ImGuizmo::WORLD;
 
