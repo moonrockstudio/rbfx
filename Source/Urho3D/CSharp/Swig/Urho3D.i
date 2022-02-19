@@ -821,6 +821,9 @@ using ImGuiConfigFlags = unsigned;
 %ignore ImGui::pdpx;
 %ignore ImGui::pdpy;
 %ignore ImGui::pdp;
+%csconstvalue("7") Urho3D::GIZMOOP_TRANSLATE;
+%csconstvalue("120") Urho3D::GIZMOOP_ROTATE;
+%csconstvalue("896") Urho3D::GIZMOOP_SCALE;
 %apply unsigned short INPUT[] { ImWchar* };
 
 %include "generated/Urho3D/_pre_systemui.i"

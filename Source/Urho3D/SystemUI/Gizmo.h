@@ -56,6 +56,11 @@ public:
     bool ManipulateNode(const Camera* camera, Node* node);
     /// Manipulate multiple nodes. Should be called from within E_UPDATE event.
     /// \param camera which observes the node.
+    /// \param nodes to be manipulated.
+    /// \returns true if node was manipulated on current frame.
+    bool ManipulateNodes(const Camera* camera, ea::vector<Node*>& nodes);
+    /// Manipulate multiple nodes. Should be called from within E_UPDATE event.
+    /// \param camera which observes the node.
     /// \param nodes to be manipulated. Specifying more than one node manipulates them in world space.
     /// \returns true if node was manipulated on current frame.
     bool Manipulate(const Camera* camera, Node** begin, Node** end);

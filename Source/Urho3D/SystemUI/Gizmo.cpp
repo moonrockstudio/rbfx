@@ -49,6 +49,11 @@ bool Gizmo::ManipulateNode(const Camera* camera, Node* node)
     return Manipulate(camera, &node, &node + 1);
 }
 
+bool Gizmo::ManipulateNodes(const Camera* camera, ea::vector<Node*>& nodes)
+{
+    return Manipulate(camera, nodes.begin(), nodes.end());
+}
+
 void Gizmo::RenderUI()
 {
     ui::TextUnformatted("Op:");
