@@ -593,6 +593,7 @@ jobs:
 
       - name: Build Cache
         uses: actions/cache@v2
+        if: env.ci_build_type != 'rel'
         with:
           path: ${{ env.CCACHE_DIR }}
           key: ${{ env.ccache_prefix }}-${{ github.job }}-${{ matrix.ci_lib_type }}-${{ matrix.ci_build_type }}-${{ github.sha }}
