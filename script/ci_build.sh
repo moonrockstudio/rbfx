@@ -80,6 +80,7 @@ quirks_android=(
 quirks_web=(
     '-DURHO3D_PROFILING=OFF'
     '-DURHO3D_CSHARP=OFF'
+    '-DURHO3D_PARTICLE_GRAPH=OFF'
 )
 quirks_dll=('-DURHO3D_CSHARP=ON')
 quirks_windows_msvc_x64=('-A' 'x64')
